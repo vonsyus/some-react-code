@@ -1,0 +1,23 @@
+@import 'home';
+@import 'generations';
+
+.route- {
+  .projects-grid {
+    @include for-mobile {
+      margin-top: 3vh;
+    }
+  }
+
+  .homeQuote-line-before-visible:before {
+    @include for-mobile {
+      display: none;
+    }
+  }
+}
+
+#global-countdown {
+  display: none;
+}
+.route-feel-good-spins #global-countdown {
+  display: none;
+}

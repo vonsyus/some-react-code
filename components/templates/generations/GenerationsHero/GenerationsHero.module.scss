@@ -1,0 +1,109 @@
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
+
+$size_generations_hero_container: 100vh;
+.heroContainer {
+  position: relative;
+  min-height: $size_generations_hero_container;
+  z-index: 1;
+}
+
+.markTop {
+  position: absolute;
+  top: 13vh;
+  @include size('left', $size-twelfth-mobile * 1.8, $size-twelfth-desktop * 1.8);
+  @include size('width', 180, 540);
+  max-width: 100%;
+
+  @include for-desktop {
+    top: 6vh;
+  }
+}
+
+.markRightContainer {
+  position: absolute;
+  top: 10vh;
+  right: 0;
+  height: 100vh;
+  left: 0;
+  overflow: hidden;
+
+  svg {
+    position: absolute;
+    top: 52vh;
+    right: -13vw;
+    transform: rotate(-45deg);
+    transform-origin: top right;
+    width: 53vw;
+    height: 23vw;
+
+    @include for-desktop {
+      top: 49vh;
+      right: 0;
+      width: 23vw;
+      height: 10vw;
+    }
+  }
+}
+
+.authorDivider {
+  text-transform: lowercase;
+}
+
+.authors {
+  display: flex;
+  text-transform: uppercase;
+  flex-direction: column;
+
+  @include for-desktop {
+    position: absolute;
+    @include size('top', false, -46);
+    right: 0;
+    @include size('gap', false, 10);
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+  }
+}
+
+$size_left_image_wrapper_position_mobile: 15;
+$size_bottom_image_wrapper_position_mobile: 17vh;
+$size_bottom_image_wrapper_position_desktop: 12vh;
+.imageWrapper {
+  position: absolute;
+  bottom: $size_bottom_image_wrapper_position_mobile;
+  @include size('left', $size-mobile-padding, $size-desktop-padding);
+  @include size('right', $size-mobile-padding, false);
+  @include size('width', false, 1064);
+
+  @include for-mobile {
+    text-align: center;
+  }
+  @include for-desktop {
+    bottom: $size_bottom_image_wrapper_position_desktop;
+  }
+
+  img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+  }
+}
+.heading {
+  margin: 0;
+  @include size('font-size', 64, 208);
+  line-height: 1.3;
+  letter-spacing: 0;
+
+  @include for-mobile {
+    padding-bottom: 1vh;
+  }
+
+  @include size('left', false, 120);
+
+  @include for-desktop {
+    position: absolute;
+    z-index: 2;
+    top: 22%;
+  }
+}

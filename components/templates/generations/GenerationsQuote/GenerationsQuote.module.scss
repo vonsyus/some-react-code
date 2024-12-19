@@ -1,0 +1,52 @@
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
+
+.commonLineStyles {
+  position: absolute;
+
+  &:after {
+    content: '';
+    z-index: 0;
+    position: absolute;
+    background: #222222;
+    height: 2px;
+    width: 2px;
+    transition: all 0.8s ease-in-out;
+    left: 0;
+    top: 0;
+  }
+}
+.commonVerticalLineStyles {
+  @extend .commonLineStyles;
+  &:after {
+    height: 0;
+  }
+}
+
+.verticalLine {
+  @extend .commonVerticalLineStyles;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  @include for-mobile {
+    display: none;
+  }
+
+  &:global(.lines-visible) {
+    &::after {
+      height: 100%;
+    }
+  }
+}
+
+.container {
+  @include size('padding-right', 16, 60);
+  @include size('padding-left', 16, 60);
+}
+.quoteWrapper {
+  @include size('width', false, 780);
+  position: relative;
+  @include size('padding-right', false, 60);
+  @include size('padding-bottom', 26, 75);
+}

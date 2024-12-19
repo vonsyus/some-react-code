@@ -1,0 +1,142 @@
+// type
+$font-condensed: 'Founders-Grotesk-Condensed';
+$font: 'Founders-Grotesk';
+$font-mono: 'Proto-Mono';
+$font-elios: 'EliosRegular';
+
+$h1-size-mobile: 140;
+$h1-height-mobile: 156;
+$h1-letter-spacing-mobile: -3.46;
+$h1-size-desktop: 228;
+$h1-height-desktop: 156;
+$h1-letter-spacing-desktop: -5.63;
+
+$h2-size-mobile: 89;
+$h2-height-mobile: 64;
+$h2-letter-spacing-mobile: -1.36;
+$h2-size-desktop: 104;
+$h2-height-desktop: 84;
+$h2-letter-spacing-desktop: -1.58;
+
+$h3-size-mobile: 76;
+$h3-height-mobile: 64;
+$h3-letter-spacing-mobile: -1.16;
+$h3-size-desktop: 89;
+$h3-height-desktop: 84;
+$h3-letter-spacing-desktop: -1.36;
+
+$h4-size-mobile: 38;
+$h4-height-mobile: 32;
+$h4-letter-spacing-mobile: 0;
+$h4-size-desktop: 57;
+$h4-height-desktop: 44;
+$h4-letter-spacing-desktop: 0;
+
+$h4-sentence-size-mobile: 38;
+$h4-sentence-height-mobile: 40;
+$h4-sentence-letter-spacing-mobile: -0.58;
+$h4-sentence-size-desktop: 57;
+$h4-sentence-height-desktop: 60;
+$h4-sentence-letter-spacing-desktop: -0.87;
+
+$h5-size-mobile: 25;
+$h5-height-mobile: 24;
+$h5-letter-spacing-mobile: 0;
+$h5-size-desktop: 38;
+$h5-height-desktop: 44;
+$h5-letter-spacing-desktop: -0.58;
+
+$h6-size-mobile: 25;
+$h6-height-mobile: 32;
+$h6-letter-spacing-mobile: 0;
+$h6-size-desktop: 38;
+$h6-height-desktop: 42;
+$h6-letter-spacing-desktop: -0.58;
+
+$h7-size-mobile: 25;
+$h7-height-mobile: 30;
+$h7-letter-spacing-mobile: 0;
+$h7-size-desktop: 28;
+$h7-height-desktop: 30;
+$h7-letter-spacing-desktop: -0.43;
+
+// TODO: Note for Arsen, changing p size because it is very small at the 1024 to 1200-ish boundary
+// what would be nice is to have a "min-size" on some elements that we specific.  it could be a true/false optional param in the size mixin
+// so for desktop, if the font reaches a certain minim size, it uses its size in pixels instead of responsive heigh
+// but just making it bigger until we get there
+/*
+
+ORIGINAL VALUS HERE
+$h8-size-mobile: 18;
+$h8-height-mobile: 30;
+$h8-letter-spacing-mobile: -0.27;
+$h8-size-desktop: 18;
+$h8-height-desktop: 30;
+$h8-letter-spacing-desktop: -0.27;
+
+$p-size-mobile: 16;
+$p-height-mobile: 20;
+$p-letter-spacing-mobile: 0.19;
+$p-size-desktop: 16;
+$p-height-desktop: 22;
+$p-letter-spacing-desktop: 0;
+
+$caption-size-mobile: 13;
+$caption-height-mobile: 16;
+$caption-letter-spacing-mobile: 0.54;
+$caption-size-desktop: 16;
+$caption-height-desktop: 22;
+$caption-letter-spacing-desktop: 0;
+
+ */
+$h8-size-mobile: 22;
+$h8-height-mobile: 34;
+$h8-letter-spacing-mobile: -0.27;
+$h8-size-desktop: 22;
+$h8-height-desktop: 37;
+$h8-letter-spacing-desktop: -0.27;
+
+$p-size-mobile: 18;
+$p-height-mobile: 27;
+$p-letter-spacing-mobile: 0.19;
+$p-size-desktop: 22;
+$p-height-desktop: 37;
+$p-letter-spacing-desktop: 0;
+
+$caption-size-mobile: 18;
+$caption-height-mobile: 21;
+$caption-letter-spacing-mobile: 0.54;
+$caption-size-desktop: 20;
+$caption-height-desktop: 25;
+$caption-letter-spacing-desktop: 0;
+
+///
+
+// colors
+$type-color: #020301;
+$type-color-secondary: #606060;
+$type-color-grey: #B0B8BB;
+
+$black: #000000;
+$white: #ffffff;
+$grey-light: #e7e2e2;
+$grey: #c3bebe;
+$sub-grey: #909090;
+$dark-grey: #2b2b2b;
+$pink: #E03A98;
+
+// sizing
+$breakpoint: 1024;
+$mobile-mockup: 375;
+$desktop-mockup: 1440;
+
+$size-twelfth-mobile: $mobile-mockup / 12;
+$size-twelfth-desktop: $desktop-mockup / 12;
+$size-third-desktop: 480;
+$size-mobile-padding: 15;
+$size-desktop-padding: 60;
+$size-body-limiter-desktop: 1318;
+$size-body-limiter-mobile: 344;
+$size-body-offset-desktop: ($desktop-mockup - $size-body-limiter-desktop) / 2;
+$info-accordion-dsk-height: 21.388vw;
+$info-accordion-dsk-large-height: 42.847vw;

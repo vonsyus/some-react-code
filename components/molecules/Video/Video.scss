@@ -1,0 +1,55 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.video-wrapper {
+  @include size('width', 340, 698);
+  margin: 0 auto;
+}
+.video {
+  width: 100%;
+  @include size('height', 193, 394);
+  @include size('margin-top', 15, 0);
+  @include size('border-radius', 12, 12);
+  border: 2px solid $black;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+  &-thumbnail {
+    @include size('width', 343, 700);
+    @include size('height', 193, 394);
+    position: absolute;
+    display: block;
+    z-index: 1;
+    padding: 0 !important;
+    object-fit: cover;
+    max-width: 100%;
+  }
+
+  &-button {
+    @include size('width', 90, 90);
+    @include size('height', 90, 90);
+    position: absolute;
+    border-radius: 50%;
+    cursor: pointer;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+}
+.video-caption {
+  width: 100%;
+  color: #000;
+  text-align: right;
+  position: relative;
+  top: 5px;
+  font-size: 80%;
+  font-style: italic;
+}

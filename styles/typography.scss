@@ -1,0 +1,362 @@
+@import 'variables';
+@import 'mixins';
+
+body {
+  @include size('font-size', 16, 16);
+  @include size('line-height', 20, 20);
+  font-family: $font, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: $type-color;
+}
+
+.h1-mobile {
+  @include size('font-size', $h1-size-mobile, false);
+  @include size('line-height', $h1-height-mobile, false);
+  @include size('letter-spacing', $h1-letter-spacing-mobile, false);
+  text-transform: uppercase;
+  font-family: $font-condensed, sans-serif;
+  font-weight: 700;
+}
+
+.h2-mobile {
+  @include size('font-size', $h2-size-mobile, false);
+  @include size('line-height', $h2-height-mobile, false);
+  @include size('letter-spacing', $h2-letter-spacing-mobile, false);
+  font-family: $font-condensed, sans-serif;
+  font-weight: 700;
+}
+
+.h3-mobile {
+  @include size('font-size', $h3-size-mobile, false);
+  @include size('line-height', $h3-height-mobile, false);
+  @include size('letter-spacing', $h3-letter-spacing-mobile, false);
+  font-family: $font-condensed, sans-serif;
+  font-weight: 600;
+}
+
+.h4-mobile {
+  @include size('font-size', $h4-size-mobile, false);
+  @include size('line-height', $h4-height-mobile, false);
+  @include size('letter-spacing', $h4-letter-spacing-mobile, false);
+  text-transform: uppercase;
+  font-family: $font-condensed, sans-serif;
+  font-weight: 700;
+}
+
+.h4-sentence-mobile {
+  @include size('font-size', $h4-sentence-size-mobile, false);
+  @include size('line-height', $h4-sentence-height-mobile, false);
+  @include size('letter-spacing', $h4-sentence-letter-spacing-mobile, false);
+  font-family: $font-condensed, sans-serif;
+  font-weight: 600;
+}
+
+.h5-mobile {
+  @include size('font-size', $h5-size-mobile, false);
+  @include size('line-height', $h5-height-mobile, false);
+  @include size('letter-spacing', $h5-letter-spacing-mobile, false);
+  text-transform: uppercase;
+  font-family: $font-condensed, sans-serif;
+  font-weight: 700;
+}
+
+.h5-semi-mobile {
+  @include size('font-size', $h5-size-mobile, false);
+  @include size('line-height', $h5-height-mobile, false);
+  @include size('letter-spacing', $h5-letter-spacing-mobile, false);
+  text-transform: uppercase;
+  font-family: $font-condensed, sans-serif;
+  font-weight: 600;
+}
+
+.h6-mobile {
+  @include size('font-size', $h6-size-mobile, false);
+  @include size('line-height', $h6-height-mobile, false);
+  @include size('letter-spacing', $h6-letter-spacing-mobile, false);
+  font-family: $font, sans-serif;
+  font-weight: 500;
+}
+
+.h7-mobile {
+  @include size('font-size', $h7-size-mobile, false);
+  @include size('line-height', $h7-height-mobile, false);
+  @include size('letter-spacing', $h7-letter-spacing-mobile, false);
+  font-family: $font-condensed, sans-serif;
+  font-weight: 700;
+}
+
+.h7-semi-mobile {
+  @include size('font-size', $h7-size-mobile, false);
+  @include size('line-height', $h7-height-mobile, false);
+  @include size('letter-spacing', $h7-letter-spacing-mobile, false);
+  font-family: $font-condensed, sans-serif;
+  font-weight: 600;
+}
+
+.h8-mobile {
+  @include size('font-size', $h8-size-mobile, false);
+  @include size('line-height', $h8-height-mobile, false);
+  @include size('letter-spacing', $h8-letter-spacing-mobile, false);
+  font-family: $font-condensed, sans-serif;
+  font-weight: 600;
+}
+
+.p {
+  @include size('font-size', $p-size-mobile, $p-size-desktop);
+  @include size('line-height', $p-height-mobile, $p-height-desktop);
+  @include size('letter-spacing', $p-letter-spacing-mobile, $p-letter-spacing-desktop);
+  font-family: $font, sans-serif;
+  font-weight: 500;
+}
+
+.p-mobile {
+  @include size('font-size', $p-size-mobile, false);
+  @include size('line-height', $p-height-mobile, false);
+  @include size('letter-spacing', $p-letter-spacing-mobile, false);
+  font-family: $font, sans-serif;
+  font-weight: 500;
+  .prefix {
+    font-weight: 700;
+  }
+}
+
+.caption {
+  @include size('font-size', $caption-size-mobile, $caption-size-desktop);
+  @include size('line-height', $caption-height-mobile, $caption-height-desktop);
+  @include size('letter-spacing', $caption-letter-spacing-mobile, $caption-letter-spacing-desktop);
+  font-family: $font, sans-serif;
+  font-weight: 500;
+  color: $type-color-secondary;
+}
+
+@include for-desktop {
+  .h1-desktop {
+    @include size('font-size', false, $h1-size-desktop);
+    @include size('line-height', false, $h1-height-desktop);
+    @include size('letter-spacing', false, $h1-letter-spacing-desktop);
+    text-transform: uppercase;
+    font-family: $font-condensed, sans-serif;
+    font-weight: 700;
+  }
+
+  .h2-desktop {
+    @include size('font-size', false, $h2-size-desktop);
+    @include size('line-height', false, $h2-height-desktop);
+    @include size('letter-spacing', false, $h2-letter-spacing-desktop);
+    font-family: $font-condensed, sans-serif;
+    font-weight: 700;
+  }
+
+  .h3-desktop {
+    @include size('font-size', false, $h3-size-desktop);
+    @include size('line-height', false, $h3-height-desktop);
+    @include size('letter-spacing', false, $h3-letter-spacing-desktop);
+    font-family: $font-condensed, sans-serif;
+    font-weight: 700;
+  }
+
+  .h4-desktop {
+    @include size('font-size', false, $h4-size-desktop);
+    @include size('line-height', false, $h4-height-desktop);
+    @include size('letter-spacing', false, $h4-letter-spacing-desktop);
+    text-transform: uppercase;
+    font-family: $font-condensed, sans-serif;
+    font-weight: 700;
+  }
+
+  .h4-sentence-desktop {
+    @include size('font-size', false, $h4-sentence-size-desktop);
+    @include size('line-height', false, $h4-sentence-height-desktop);
+    @include size('letter-spacing', false, $h4-sentence-letter-spacing-desktop);
+    font-family: $font-condensed, sans-serif;
+    font-weight: 600;
+  }
+
+  .h5-desktop {
+    @include size('font-size', false, $h5-size-desktop);
+    @include size('line-height', false, $h5-height-desktop);
+    @include size('letter-spacing', false, $h5-letter-spacing-desktop);
+    text-transform: uppercase;
+    font-family: $font-condensed, sans-serif;
+    font-weight: 700;
+  }
+
+  .h5-semi-desktop {
+    @include size('font-size', false, $h5-size-desktop);
+    @include size('line-height', false, $h5-height-desktop);
+    @include size('letter-spacing', false, $h5-letter-spacing-desktop);
+    font-family: $font-condensed, sans-serif;
+    font-weight: 600;
+  }
+
+  .h6-desktop {
+    @include size('font-size', false, $h6-size-desktop);
+    @include size('line-height', false, $h6-height-desktop);
+    @include size('letter-spacing', false, $h6-letter-spacing-desktop);
+    font-family: $font, sans-serif;
+    font-weight: 500;
+  }
+
+  .h7-desktop {
+    @include size('font-size', false, $h7-size-desktop);
+    @include size('line-height', false, $h7-height-desktop);
+    @include size('letter-spacing', false, $h7-letter-spacing-desktop);
+    font-family: $font-condensed, sans-serif;
+    font-weight: 700;
+  }
+
+  .h7-semi-desktop {
+    @include size('font-size', false, $h7-size-desktop);
+    @include size('line-height', false, $h7-height-desktop);
+    @include size('letter-spacing', false, $h7-letter-spacing-desktop);
+    font-family: $font-condensed, sans-serif;
+    font-weight: 600;
+  }
+
+  .h8-desktop {
+    @include size('font-size', false, $h8-size-desktop);
+    @include size('line-height', false, $h8-height-desktop);
+    @include size('letter-spacing', false, $h8-letter-spacing-desktop);
+    font-family: $font-condensed, sans-serif;
+    font-weight: 600;
+  }
+
+  .p-desktop {
+    @include size('font-size', false, $p-size-desktop);
+    @include size('line-height', false, $p-height-desktop);
+    @include size('letter-spacing', false, $p-letter-spacing-desktop);
+    font-family: $font, sans-serif;
+    font-weight: 500;
+    .prefix {
+      font-weight: 700;
+    }
+  }
+}
+
+@mixin set-input-placeholder-color($col) {
+  &::-webkit-input-placeholder {
+    color: $col;
+  }
+  &:-moz-placeholder {
+    color: $col;
+    opacity: 1;
+  }
+  &::-moz-placeholder {
+    color: $col;
+    opacity: 1;
+  }
+  &:-ms-input-placeholder {
+    color: $col;
+  }
+  &::-ms-input-placeholder {
+    color: $col;
+  }
+  &::placeholder {
+    color: $col;
+  }
+  color: $col;
+}
+
+a {
+  color: $type-color;
+}
+strong {
+  font-size: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+}
+.alert {
+  color: #ff0000;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+
+
+
+
+//GLITCH EFFECT
+/* Our mixin positions a copy of our text
+directly on our existing text, while
+also setting content to the appropriate
+text set in the data-text attribute. */
+@mixin glitchCopy {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch {
+  position: relative;
+  display: inline-block;
+
+  /* Animation provies a slight random skew. Check bottom of doc
+  for more information on how to random skew. */
+  animation: glitch-skew 1s infinite linear alternate-reverse;
+
+  // Creates a copy before our text.
+  &::before{
+    // Duplicates our text with the mixin.
+    @include glitchCopy;
+    // Scoots text slightly to the left for the color offset.
+    left: 2px;
+    // Creates the color 'shadow' that happens on the glitch.
+    text-shadow: -2px 0 #ff00c1;
+    /* Creates an initial clip for our glitch. This works in
+    a typical top,right,bottom,left fashion and creates a mask
+    to only show a certain part of the glitch at a time. */
+    clip: rect(44px, 450px, 56px, 0);
+    /* Runs our glitch-anim defined below to run in a 5s loop, infinitely,
+    with an alternating animation to keep things fresh. */
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+  }
+
+  // Creates a copy after our text. Note comments from ::before.
+  &::after {
+    @include glitchCopy;
+    left: -2px;
+    text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+    animation: glitch-anim2 1s infinite linear alternate-reverse;
+  }
+}
+
+/* Creates an animation with 20 steaps. For each step, it calculates
+a percentage for the specific step. It then generates a random clip
+box to be used for the random glitch effect. Also adds a very subtle
+skew to change the 'thickness' of the glitch.*/
+@keyframes glitch-anim {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      clip: rect(random(100)+px, 9999px, random(100)+px, 0);
+      transform: skew((random(100) / 100) + deg);
+    }
+  }
+}
+
+// Same deal, just duplicated for ultra randomness.
+@keyframes glitch-anim2 {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      clip: rect(random(100)+px, 9999px, random(100)+px, 0);
+      transform: skew((random(100) / 100) + deg);
+    }
+  }
+}
+
+// Does the same deal as before, but now only skews. Used for main text.
+@keyframes glitch-skew {
+  $steps: 10;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      transform: skew((random(10) - 5) + deg);
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.content {
+  position: relative;
+  display: flex;
+
+  @include for-mobile {
+    flex-direction: column;
+  }
+}
+
+.left,
+.right {
+  position: relative;
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.stickyContentBox {
+  position: relative;
+  flex: 1;
+}
+.stickyContent {
+  @include for-desktop {
+    position: sticky;
+    top: 0;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}

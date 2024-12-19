@@ -1,0 +1,57 @@
+@import 'variables';
+
+@font-face {
+  font-family: $font-condensed;
+  font-weight: 700;
+  font-style: normal;
+  src: url('/fonts/founders-grotesk-condensed-bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: $font-condensed;
+  font-weight: 600;
+  font-style: normal;
+  src: url('/fonts/founders-grotesk-condensed-semibold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: $font;
+  font-weight: 500;
+  font-style: normal;
+  src: url('/fonts/founders-grotesk-medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: $font-mono;
+  font-weight: 500;
+  font-style: normal;
+  src: url('/fonts/proto-mono-medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: $font-mono;
+  font-weight: 400;
+  font-style: normal;
+  src: url('/fonts/proto-mono-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: $font-elios;
+  font-weight: 400;
+  font-style: normal;
+  src: url('/fonts/elios.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: $font-elios;
+  font-weight: 500;
+  font-style: normal;
+  src: url('/fonts/elios.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: $font-elios;
+  font-weight: 700;
+  font-style: normal;
+  src: url('/fonts/elios.woff2') format('woff2');
+}

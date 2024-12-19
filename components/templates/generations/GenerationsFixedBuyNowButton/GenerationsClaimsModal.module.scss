@@ -1,0 +1,16 @@
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
+
+.modal {
+  background: white;
+  @include size('margin-left', 0, $size-desktop-padding);
+  @include size('margin-right', 0, $size-desktop-padding);
+  border: 2px solid $black;
+  border-top: none;
+
+  @include for-mobile {
+    width: 100%;
+    min-height: 100%;
+    overflow-y: auto;
+  }
+}

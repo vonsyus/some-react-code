@@ -1,0 +1,80 @@
+@import '../../../styles/mixins';
+@import '../../../styles/mixins';
+
+.quote {
+  text-decoration: none;
+  @include for-desktop {
+    cursor: none;
+    position: relative;
+    display: block;
+  }
+
+  &-title {
+    @include size('margin-bottom', 20, 20);
+    text-transform: uppercase;
+    user-select: none;
+    &-nascent {
+      color: $type-color-grey;
+    }
+  }
+
+  &-text {
+    @include size('line-height', 38, 49);
+    text-transform: uppercase;
+    user-select: none;
+    &-nascent {
+      color: $type-color-grey;
+    }
+  }
+
+  &-wrapper {
+    @include size('margin-top', 20, 60);
+    @include size('margin-bottom', 56, 0);
+    display: flex;
+    @include for-desktop {
+      pointer-events: none;
+    }
+
+    &.more-margin {
+      @include size('margin-top', 30, 90);
+    }
+
+    &.more-width .quote-quoter {
+      @include size('max-width', 250, 300);
+    }
+  }
+
+  &-quoter {
+    @include size('max-width', 184, 208);
+    &-nascent {
+      color: $type-color-grey;
+    }
+  }
+
+  &-image {
+    @include size('max-width', 75, 75);
+    @include size('height', 75, 75);
+    @include size('margin-right', 20, 20);
+    border-radius: 50%;
+  }
+
+  &-read-more {
+    @include size('padding-left', false, 5);
+    @include size('padding-right', false, 5);
+
+    @include for-desktop {
+      position: absolute;
+      pointer-events: none;
+      cursor: none;
+      white-space: nowrap;
+      display: inline-block;
+      background-color: $white;
+      transform: translate(-50%, -50%) scale(0);
+      transition: transform 0.1s ease;
+
+      &-visible {
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+  }
+}

@@ -1,0 +1,123 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.mediaWithText {
+  @include size('padding-bottom', 70, 0);
+  background-color: $black;
+  height: 100%;
+
+  @include for-desktop {
+    display: flex;
+    position: relative;
+    z-index: 3;
+  }
+
+  &-img {
+    //@include size('width', 344, 1206);
+    @include size('width', 344, 1109);
+    @include size('padding-top', 16, 0);
+    @include size('margin-left', 15, 0);
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 50%;
+    }
+  }
+
+  &-text {
+    @include size('padding-right', false, 30);
+    @include size('padding-bottom', false, 20);
+    @include size('margin-top', 40, 542);
+    @include size('margin-left', 40, false);
+    @include for-desktop {
+      @include size('margin-left', 175, 24);
+      @include size('width', 150, 250);
+    }
+    color: $white;
+    width: calc(100% - 120px);
+
+    &.shorter-text-mode {
+      @include size('margin-top', 40, 120);
+    }
+
+    a {
+      color: $white;
+    }
+
+    h2 {
+      @include size('margin-bottom', 20, 20);
+    }
+  }
+
+  &-dark {
+    @include size('font-size', 16, 16);
+    @include size('line-height', 20, 22);
+    @include size('letter-spacing', 0.19, 0);
+    color: $type-color-grey;
+  }
+
+  &.wide-text-mode {
+    .mediaWithText-img {
+      //@include size('width', 344, 1206);
+      @include size('width', 344, 900);
+
+      img {
+        max-width: 100%;
+        @include size('min-height', false, 680);
+      }
+    }
+
+    .mediaWithText-text {
+      @include for-desktop {
+        @include size('width', 150, 1050);
+      }
+    }
+  }
+
+  &-arrow {
+    align-items: center;
+    background-color: unset;
+    cursor: pointer;
+    border: unset;
+    opacity: 0.7;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+
+  &-slider .splide__arrow svg {
+    fill: $white !important;
+  }
+
+  &-fade {
+    @include for-desktop {
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+    }
+  }
+}
+
+.mediaWithText--nascent-quotes-slider {
+  color: $type-color-grey;
+
+  p {
+    text-transform: uppercase;
+    font-weight: 700;
+    @include size('font-size', 20, 50);
+    @include size('line-height', 30, 49);
+  }
+  a {
+    display: inline-block;
+    color: $type-color-grey;
+    @include size('font-size', 20, 26);
+    @include size('margin-top', 6, 10);
+  }
+  h2 {
+    @include size('margin-top', 10, 20);
+  }
+}

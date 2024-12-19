@@ -1,0 +1,18 @@
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
+
+.button {
+  position: absolute;
+  @include size('right', 16, 60);
+  bottom: 5vh;
+
+  @include size('padding-left', 18, 34);
+  @include size('padding-right', 16, 32);
+
+  z-index: 5;
+  line-height: 1;
+
+  &:global(._visible) {
+    position: fixed;
+  }
+}

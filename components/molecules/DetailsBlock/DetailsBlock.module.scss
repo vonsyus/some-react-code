@@ -1,0 +1,17 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.box {
+  @include size('padding-bottom', 40, 0);
+}
+
+.title {
+  @include size('margin-bottom', 16, 16);
+  @include size('font-size', 30, 30);
+  @include size('line-height', 34, 34);
+  @include size('letter-spacing', -0.58, 0);
+  @include size('margin-top', 4.5, 5.2);
+  text-transform: uppercase;
+  font-family: $font-condensed;
+  font-weight: 600;
+}

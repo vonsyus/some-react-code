@@ -1,0 +1,43 @@
+@import 'variables';
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: $white;
+}
+
+button {
+  border: 0;
+  padding: 0;
+}
+
+.button-unstyled {
+  background: transparent;
+  border: none;
+  outline: none;
+  text-align: inherit;
+  -webkit-appearance: none;
+  color: $type-color;
+  cursor: pointer;
+}
+
+.input {
+  background-color: unset;
+  border: unset;
+
+  &:focus {
+    outline: unset;
+  }
+}
+
+.splide__slide, .splide__list {
+  transform: translateZ(0);
+}

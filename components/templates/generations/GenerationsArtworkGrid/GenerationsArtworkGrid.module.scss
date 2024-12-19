@@ -1,0 +1,251 @@
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
+
+.markLastItem {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  height: auto;
+  width: 4vw;
+
+  @include for-mobile {
+    display: none;
+  }
+}
+
+.imageSquare {
+  aspect-ratio: 1;
+  //object-fit: cover;
+  //object-fit: none;
+  object-fit: contain;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  @include for-mobile {
+    display: none;
+  }
+
+  img {
+    position: relative;
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    @extend .imageSquare;
+    @include size('padding-top', 16, 60);
+    @include size('padding-right', 16, 60);
+    @include size('padding-bottom', 16, 60);
+    @include size('padding-left', 16, 60);
+  }
+
+  & > div {
+    position: relative;
+
+    &:hover .artworkClaim {
+      opacity: 1;
+    }
+  }
+}
+
+.artworkClaim {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: white;
+  transform: translate(-50%, -50%);
+  line-height: 1;
+  @include size('padding-top', false, 2);
+  @include size('padding-right', false, 30);
+  @include size('padding-bottom', false, 2);
+  @include size('padding-left', false, 30);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.gridItemVideo {
+  position: relative;
+  z-index: 2;
+  @include for-mobile {
+    @include size('padding-top', 16, false);
+    @include size('padding-bottom', 16, false);
+  }
+
+  @include for-desktop {
+    grid-column: 1 / 3;
+    grid-row: 2 /3;
+  }
+  @include size('padding-left', false, 120);
+
+  :global(.video) {
+    position: relative;
+  }
+}
+.markVideoRightWrapper {
+  position: sticky;
+  width: 100%;
+  top: 2vh;
+  z-index: 2;
+
+  svg {
+    position: absolute;
+    top: 50%;
+    right: -6vw;
+    height: auto;
+    width: 14vw;
+    margin-top: 7vw;
+  }
+}
+.markVideoBottom {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 7vw;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.markVideoRightWrapper,
+.markVideoBottom {
+  @include for-mobile {
+    display: none;
+  }
+}
+
+.loadMoreButton {
+  width: 100%;
+  background: none;
+  border-bottom: 2px solid #000000;
+  @include size('padding-top', 10.5, 20.5);
+  @include size('padding-bottom', 12.5, 15.5);
+
+  @include for-mobile {
+    display: none;
+  }
+}
+
+%common_line_styles {
+  content: '';
+  z-index: 1;
+  display: block;
+  position: absolute;
+  background-color: $black;
+  height: 2px;
+  width: 2px;
+}
+
+.wideLineAfter {
+  &:after {
+    @extend %common_line_styles;
+    @include size('left', false, 0);
+    @include size('right', false, 0);
+    bottom: 0;
+    width: 0;
+    transition: width 0.8s ease-in-out;
+  }
+
+  &:global(.lines-visible) {
+    &::after {
+      @include size('width', false, $desktop-mockup);
+    }
+  }
+}
+
+.shortLineAfter,
+.shortLineBefore {
+  &:after {
+    @extend %common_line_styles;
+    @include size('left', false, 0);
+    @include size('right', false, 0);
+    bottom: 0;
+    width: 0;
+    transition: width 0.8s ease-in-out;
+  }
+
+  &:global(.lines-visible) {
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+.shortLineBefore {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  &:after {
+    top: 0;
+    bottom: initial;
+  }
+}
+
+.borderLeft,
+.borderRight {
+  &:before {
+    @extend %common_line_styles;
+    height: 0;
+    left: -2px;
+    top: 0;
+    transition: height 0.8s ease-in-out;
+  }
+
+  &:global(.lines-visible) {
+    &::before {
+      height: 100%;
+    }
+  }
+}
+.borderRight {
+  &:before {
+    left: initial;
+    right: 0;
+  }
+}
+
+// SLIDER
+.mobileWrapper {
+  @include for-desktop {
+    display: none;
+  }
+}
+.slider {
+  border-bottom: 2px solid $black;
+
+  img {
+    @include size('max-width', 280, false);
+    @extend .imageSquare;
+
+    @include for-desktop {
+      border-top: 2px solid $black;
+      border-right: 2px solid $black;
+    }
+  }
+}
+
+.mobileGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  img {
+    position: relative;
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    @extend .imageSquare;
+    @include size('padding-top', 16, false);
+    @include size('padding-right', 16, false);
+    @include size('padding-bottom', 16, false);
+    @include size('padding-left', 16, false);
+  }
+}
+
+.mobileGridLink {
+  display: block;
+  position: relative;
+}

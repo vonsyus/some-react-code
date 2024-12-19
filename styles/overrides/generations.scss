@@ -1,0 +1,10 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.route-generations {
+  .newsList.newsList-visible::before {
+    @include for-mobile {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "extends": ["next/core-web-vitals", "prettier"],
+  "rules": {
+    // disable img warning
+    "@next/next/no-img-element": "off",
+    // disable img alt warning
+    "jsx-a11y/alt-text": [0]
+  }
+}

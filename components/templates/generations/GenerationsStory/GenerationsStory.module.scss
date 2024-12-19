@@ -1,0 +1,536 @@
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
+
+$size_container_desktop_padding: 60;
+$size_container_mobile_padding: 16;
+
+.container {
+  position: relative;
+  z-index: 1;
+  @include size('padding-top', $size_container_mobile_padding, $size_container_desktop_padding);
+  @include size('padding-right', $size_container_mobile_padding, $size_container_desktop_padding);
+  @include size('padding-bottom', $size_container_mobile_padding * 4, $size_container_desktop_padding * 4);
+  @include size('padding-left', $size_container_mobile_padding, $size_container_desktop_padding);
+
+  @include for-mobile {
+    border-bottom: 2px solid $black;
+    @include size('margin-bottom', $size_container_mobile_padding * 2, false);
+  }
+}
+
+.newsList {
+  @include for-mobile {
+    &.newsList-visible::before {
+      display: none;
+    }
+  }
+}
+
+.content {
+  position: relative;
+}
+
+.heading {
+  color: #222222;
+  text-transform: uppercase;
+  font-family: $font;
+  @include size('font-size', 60, 80);
+  font-weight: 500;
+}
+
+%generations_story_common_paragraph_styles {
+  p {
+    margin: 1em 0;
+    @include size('font-size', false, 32);
+    @include for-desktop {
+      line-height: 1.3;
+    }
+  }
+}
+
+.textUnderHeading {
+  @include size('max-width', 300, 600);
+  @extend %generations_story_common_paragraph_styles;
+}
+
+.rightImageWrapper {
+  position: relative;
+  @include size('margin-top', $size_container_mobile_padding * 1.5, $size_container_desktop_padding * 1.5);
+  @include size('margin-bottom', $size_container_mobile_padding * 3, $size_container_desktop_padding * 3);
+
+  img {
+    display: block;
+    margin-left: auto;
+    max-width: 100%;
+    @include size('width', $size-twelfth-mobile * 10, $size-twelfth-desktop * 10);
+    @include size('margin-right', -$size_container_mobile_padding, -$size_container_desktop_padding);
+  }
+}
+
+.textUnderRightImage {
+  @include size('max-width', 240, 380);
+  @extend %generations_story_common_paragraph_styles;
+  margin-left: auto;
+  @include size('padding-left', $size_container_mobile_padding, 38);
+  @include size('margin-bottom', 40, 100);
+
+  @include for-mobile {
+    @include size('padding-right', 16, false);
+  }
+}
+
+.textAboveLeftImage {
+  @include size('max-width', $mobile-mockup, $desktop-mockup / 1.7);
+  @extend %generations_story_common_paragraph_styles;
+  @include size('padding-right', $size_container_mobile_padding * 2, $size_container_desktop_padding * 2);
+}
+
+.leftImageWrapper {
+  position: relative;
+  z-index: 1;
+  @include size('margin-top', $size_container_mobile_padding * 2, $size_container_desktop_padding * 2);
+  @include size('margin-bottom', $size_container_mobile_padding * 4, $size_container_desktop_padding * 4);
+  @include size('margin-right', -$size_container_mobile_padding, 0);
+
+  :global(.video) {
+    position: relative;
+  }
+
+  /*
+  img {
+    display: block;
+    @include size('width', false, $size-twelfth-desktop * 10);
+
+    @include for-mobile {
+      width: 100%;
+    }
+  }
+
+   */
+}
+
+.textUnderLeftImage {
+  @include size('max-width', $mobile-mockup, 800);
+  @extend %generations_story_common_paragraph_styles;
+  margin-left: auto;
+  @include size('padding-right', 0, $size_container_desktop_padding * 2);
+  @include size('padding-left', $size_container_mobile_padding * 4, 0);
+}
+
+.collageImages {
+  display: flex;
+  align-items: flex-start;
+  @include size('gap', 24, $size_container_desktop_padding);
+  width: fit-content;
+  margin-left: auto;
+  position: relative;
+  @include size('padding-top', $size_container_mobile_padding * 2, $size_container_desktop_padding * 4);
+  @include size('padding-bottom', $size_container_mobile_padding * 12, $size_container_desktop_padding * 7);
+
+  img {
+    display: block;
+    position: relative;
+    width: 100%;
+  }
+
+  & > div {
+    &:nth-child(1) {
+      position: relative;
+      @include size('width', $size-twelfth-mobile * 4.4, $size-twelfth-desktop * 3.5);
+      z-index: 1;
+    }
+    &:nth-child(2) {
+      @include size('width', $size-twelfth-mobile * 4, $size-twelfth-desktop * 3.3);
+      @include size('margin-top', -20, -$size-twelfth-desktop / 2);
+      z-index: 3;
+    }
+
+    &:nth-child(3) {
+      position: absolute;
+      @include size('top', $size-twelfth-mobile * 4.4, $size-twelfth-desktop * 4.7);
+      @include size('left', $size-twelfth-mobile * 2.6, $size-twelfth-desktop * 2);
+      @include size('width', $size-twelfth-mobile * 3.4, $size-twelfth-desktop * 2.4);
+      z-index: 2;
+    }
+    &:nth-child(4) {
+      position: absolute;
+      @include size('top', $size-twelfth-mobile * 6.6, $size-twelfth-desktop * 6);
+      right: 0;
+      @include size('width', $size-twelfth-mobile * 4.2, $size-twelfth-desktop * 3.5);
+      @include size('margin-right', -$size_container_mobile_padding, -$size_container_desktop_padding);
+      z-index: 4;
+      overflow: hidden;
+    }
+  }
+}
+
+.gridImages {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  @include size('padding-bottom', $size-twelfth-mobile * 2, $size-twelfth-desktop * 4);
+  position: relative;
+  z-index: 1;
+}
+
+.gridImages > div {
+  flex: 0 0 auto;
+  text-align: right;
+  position: relative;
+
+  img {
+    width: 100%;
+    position: relative;
+  }
+  p {
+    @include for-mobile {
+      line-height: 1.2;
+      @include size('font-size', 10, false);
+      @include size('padding-left', 30, false);
+    }
+
+    @include size('margin-top', 7, 7);
+  }
+
+  &:nth-child(1) {
+    @include size('width', $size-twelfth-mobile * 5, $size-twelfth-desktop * 4.5);
+    @include size('left', false, $size-twelfth-desktop / 5);
+
+    p {
+      @include size('padding-right', 10, 30);
+    }
+  }
+  &:nth-child(2) {
+    @include size('width', $size-twelfth-mobile * 5, $size-twelfth-desktop * 5);
+    @include size('top', $size-twelfth-mobile * 2, $size-twelfth-desktop * 3);
+
+    p {
+      @include size('padding-right', 16, 50);
+    }
+  }
+
+  &:nth-child(3) {
+    @include size('width', $size-twelfth-mobile * 5, $size-twelfth-desktop * 4.8);
+    @include size('top', $size-twelfth-mobile, $size-twelfth-desktop);
+  }
+  &:nth-child(4) {
+    @include size('width', $size-twelfth-mobile * 5, $size-twelfth-desktop * 5);
+    @include size('top', $size-twelfth-mobile * 2.5, $size-twelfth-desktop * 4);
+    @include size('left', false, -$size-twelfth-desktop / 3);
+
+    p {
+      @include size('padding-right', 16, 50);
+    }
+  }
+}
+
+.imageCaption {
+  color: #222222;
+}
+
+/*
+ * Animated Lines
+ */
+.commonLineStyles {
+  position: absolute;
+
+  &:after {
+    content: '';
+    z-index: 0;
+    position: absolute;
+    background: #222222;
+    height: 2px;
+    width: 2px;
+    transition: all 0.8s ease-in-out;
+    left: 0;
+    top: 0;
+  }
+}
+.commonVerticalLineStyles {
+  @extend .commonLineStyles;
+  &:after {
+    height: 0;
+  }
+}
+.commonHorizontalLineStyles {
+  @extend .commonLineStyles;
+  &:after {
+    width: 0;
+  }
+}
+
+.markAboveRightImage {
+  position: absolute;
+  left: -6vw;
+  top: -4vh;
+  z-index: 1;
+
+  width: 12vw;
+  height: 9vh;
+}
+
+.markUnderRightImage {
+  width: 2.6vw;
+  height: auto;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin-left: -1.3vw;
+  @include size('padding-top', 90, 80);
+  box-sizing: content-box;
+}
+
+// VERTICAL LINES
+.verticalLineAboveRightImage {
+  @extend .commonVerticalLineStyles;
+  top: 0;
+  right: 8vw;
+  @include for-desktop {
+    left: auto;
+    right: 30vw;
+  }
+
+  &:global(.lines-visible) {
+    &::after {
+      @include size('height', 270, 480);
+    }
+  }
+}
+
+.verticalLineUnderRightImage {
+  @extend .commonVerticalLineStyles;
+  top: 100%;
+  right: 8vw;
+  @include size('height', 460, 1150);
+  @include size('margin-right', -24, -$size_container_desktop_padding);
+
+  @include for-desktop {
+    right: 30vw;
+  }
+
+  &:global(.lines-visible) {
+    &::after {
+      @include size('height', 606, 1150);
+    }
+  }
+}
+.horizontalLineToLeftImage {
+  @extend .commonHorizontalLineStyles;
+  bottom: 0;
+  left: 2px;
+
+  @include for-mobile {
+    display: none;
+  }
+
+  &::after {
+    left: initial;
+    right: 0;
+  }
+
+  &:global(.lines-visible) {
+    &::after {
+      @include size('width', 60, 330);
+    }
+  }
+}
+
+.verticalLineUnderLeftImage {
+  @extend .commonVerticalLineStyles;
+  top: 90%;
+  @include size('left', 40, 340);
+  @include size('height', 1160, 2230);
+
+  @include for-desktop {
+    top: 95%;
+  }
+
+  &:global(.lines-visible) {
+    &::after {
+      height: 100%;
+    }
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6vw 4vw 0 4vw;
+    border-color: #5bb58f transparent transparent transparent;
+    -webkit-transform: rotate(360deg);
+    z-index: 1;
+    position: sticky;
+    @include size('top', false, 150);
+    margin-left: calc(-4vw + 2px);
+    box-sizing: content-box;
+    @include size('margin-top', 30, 100);
+
+    @include for-mobile {
+      top: 40vh;
+    }
+  }
+}
+
+.verticalLine1to3GridImage {
+  @extend .commonVerticalLineStyles;
+  bottom: 9%;
+  @include size('left', 20, 100);
+
+  &:global(.lines-visible) {
+    &::after {
+      @include size('height', 200, 200);
+    }
+  }
+}
+.verticalLine1to3GridImage {
+  @extend .commonVerticalLineStyles;
+  @include size('bottom', 40, 56);
+  @include size('left', 20, 100);
+
+  &:global(.lines-visible) {
+    &::after {
+      @include size('height', 120, 260);
+    }
+  }
+}
+.verticalLine2to4GridImage {
+  @extend .commonVerticalLineStyles;
+  bottom: 9%;
+  @include size('left', 60, 180);
+
+  &:global(.lines-visible) {
+    &::after {
+      @include size('height', 200, 200);
+    }
+  }
+}
+.verticalLine2to4GridImage {
+  @extend .commonVerticalLineStyles;
+  @include size('bottom', 70, 70);
+  @include size('left', 20, 150);
+
+  &:global(.lines-visible) {
+    &::after {
+      @include size('height', 190, 350);
+    }
+  }
+}
+.verticalLine4toTheEhdGridImage {
+  @extend .commonVerticalLineStyles;
+  @include size('bottom', 70, 60);
+  @include size('left', 20, 100);
+
+  &:global(.lines-visible) {
+    &::after {
+      @include size('height', 120, 440);
+    }
+  }
+}
+
+// HORIZONTAL LINES
+.horizontalLine3to4GridImage {
+  @extend .commonHorizontalLineStyles;
+  @include size('bottom', 80, 120);
+  @include size('right', 30, 70);
+
+  &:global(.lines-visible) {
+    &::after {
+      @include size('width', 80, 260);
+    }
+  }
+}
+
+$size-follow-container-height-mobile: 60vh;
+$size-follow-container-height-desktop: 90vh;
+.followContainer {
+  position: relative;
+  @include size('padding-right', $size-twelfth-mobile, $size-twelfth-desktop);
+  @include size('padding-left', $size-twelfth-mobile, $size-twelfth-desktop);
+  height: $size-follow-container-height-mobile;
+  z-index: 1;
+
+  @include for-desktop {
+    height: $size-follow-container-height-desktop;
+  }
+}
+$size-follow-text-left-position-mobile: 8vh;
+$size-follow-text-left-position-desktop: 21vh;
+.followText {
+  position: sticky;
+  @include size('top', $size-twelfth-mobile * 6, $size-twelfth-desktop * 3);
+  @include size('margin-bottom', $size-twelfth-mobile / 2, $size-twelfth-desktop / 2);
+  @include size('font-size', 22, 30);
+  margin-left: $size-follow-text-left-position-mobile;
+  padding-top: 6vh;
+  filter: saturate(0) contrast(300%);
+
+  @include for-desktop {
+    margin-left: $size-follow-text-left-position-desktop;
+  }
+}
+.verticalFollowLine {
+  position: absolute;
+  top: -15vw;
+  left: $size-follow-text-left-position-mobile;
+
+  @include for-desktop {
+    top: 0;
+    left: $size-follow-text-left-position-desktop;
+  }
+
+  &:after {
+    content: '';
+    z-index: 50;
+    display: block;
+    position: absolute;
+    background: #222222;
+    height: 0;
+    width: 2px;
+    left: 0;
+    top: 0;
+    transition: height 0.8s ease-in-out;
+  }
+
+  &:global(.lines-visible) {
+    &::after {
+      height: calc($size-follow-container-height-mobile + 15vw);
+      @include for-desktop {
+        height: $size-follow-container-height-desktop;
+      }
+    }
+  }
+}
+.horizontalFollowLine {
+  position: absolute;
+  top: $size-follow-container-height-mobile;
+  left: $size-follow-text-left-position-mobile;
+  right: 8vw;
+
+  @include for-desktop {
+    top: $size-follow-container-height-desktop;
+    left: $size-follow-text-left-position-desktop;
+    right: 30vw;
+  }
+
+  &:after {
+    content: '';
+    z-index: 50;
+    display: block;
+    position: absolute;
+    background: #222222;
+    height: 2px;
+    width: 0;
+    left: 0;
+    top: 0;
+    transition: width 0.8s ease-in-out;
+  }
+
+  &:global(.lines-visible) {
+    &::after {
+      width: 100%;
+    }
+  }
+}

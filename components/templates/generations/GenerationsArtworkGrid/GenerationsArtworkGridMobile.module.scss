@@ -1,0 +1,12 @@
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
+
+.link {
+  display: block;
+  @include size('padding-top', 20, false);
+  @include size('padding-bottom', 20, false);
+  @include size('padding-left', 20, false);
+  @include size('padding-right', 20, false);
+  border-left: 2px solid $black;
+  border-top: 2px solid $black;
+}
